@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Form</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Form</h1>
+        <form action="save.php" method="POST">
+            <label>Name: <input type="text" name="name"></label>
+            <br>
+
+            Age:<br>
+            <label><input type="radio" name="age" value="&lt;18">&lt;18</label><br>
+            <label><input type="radio" name="age" value="19-35">19-35</label><br>
+            <label><input type="radio" name="age" value="36-48">36-48</label><br>
+            <label><input type="radio" name="age" value="&gt;49">&gt;49</label><br>
+            
+            <label>Profession: <input type="text" name="profession"></label><br>
+
+            <label>Country: 
+                <select name="country">
+                    <option value="portugal">Portugal</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="espanha">Espanha</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </label> <br>
+
+            Interests:<br>
+                <label><input type="checkbox" name="interests" value="Sports">Sports</label>
+                <label><input type="checkbox" name="interests" value="Politics">Politics</label>
+                <label><input type="checkbox" name="interests" value="Food">Food</label>
+                <label><input type="checkbox" name="interests" value="Health">Health</label><br>
+                <label><input type="checkbox" name="interests" value="Tecnology">Tecnology</label>
+                <label><input type="checkbox" name="interests" value="Science">Science</label>
+                <label><input type="checkbox" name="interests" value="History">History</label>
+                <label><input type="checkbox" name="interests" value="Literature">Literature</label>
+            <br>
+
+            <label>How did you found out this form? <br>
+                <textarea name="foundForm" rows="4" cols="50"></textarea>
+            </label>
+            
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
