@@ -1,0 +1,52 @@
+body {
+  width: 60em;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "green green green"
+                      "yellow orange red"
+                      "yellow blue red";
+}
+
+section {
+  padding: 2em;
+  margin: 1em;
+}
+
+#green {
+  grid-area: green;
+  background-color: #baffc9;
+}
+
+#orange {
+  grid-area: orange;
+  background-color: #ffdfba;
+}
+
+#yellow {
+  grid-area: yellow;
+  background-color:   #ffffba;
+}
+
+#red {
+  grid-area: red;
+  background-color:   #ffb3ba;
+}
+
+#blue {
+  grid-area: blue;
+  background-color:   #bae1ff;
+}
+
+ul { 
+  padding: 0; 
+}
+
+li {
+  background-color: white;
+  padding: 1em;
+  display: block;
+  margin: 1em;
+}
