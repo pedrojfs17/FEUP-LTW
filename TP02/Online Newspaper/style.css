@@ -55,6 +55,7 @@ nav ul {
 }
 
 nav ul li {
+    background-color: white;
     padding: 1em;
     text-align: center;
     border-top: 5px solid;
@@ -99,6 +100,7 @@ footer a {
 
 #news article {
     position: relative;
+    background-color: white;
 }
 
 #news article header a {
@@ -111,7 +113,7 @@ footer a {
 }
 
 #news img {
-    width: 100vw;
+    width: 100%;
 }
 
 #news p {
