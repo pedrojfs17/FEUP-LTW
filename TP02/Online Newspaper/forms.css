@@ -1,0 +1,28 @@
+#menu {
+    height: fit-content;
+}
+
+#register {
+    position: relative;
+    bottom: 10em;
+}
+
+#register h1 {
+    text-align: center;
+}
+
+#register form {
+    background-color: white;
+    max-width: 20em;
+    margin: auto;
+    padding: 2em;
+}
+
+#register form * {
+    width: 100%;
+    margin: 1em 0em;
+}
+
+#register form label {
+    font-size: 1.1em;
+}
