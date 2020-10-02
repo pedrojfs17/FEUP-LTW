@@ -1,0 +1,55 @@
+#comments {
+    padding: 1em;
+}
+
+.comment .user::after {
+    content: " said:";
+}
+
+.comment .date {
+    position: absolute;
+    right: 0;
+}
+
+#news article .comment p {
+    background-color: #EDEFF0;
+    padding: 1em;
+    padding-top: 0;
+    line-height: 1.5em;
+}
+
+#news article .comment p::before {
+    position: relative;
+    line-height: 1em;
+    top: 0.3em;
+    content: "\201C";
+    font-size: 3em;
+    color: lightgray;
+}
+
+#comments form {
+    background-color: #EDEFF0;
+}
+
+#comments form h2 {
+    font-size: 1em;
+}
+
+#comments form input[type="text"], #comments form input[type="email"] {
+    background-color:  #EDEFF0;
+    border: none;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+}
+
+#comments form textarea {
+    width: 100%;
+    height: 6em;
+}
+
+#comments form input[type="submit"] {
+    display: block;
+    padding: 1em;
+    color: white;
+    background-color: black;
+}
