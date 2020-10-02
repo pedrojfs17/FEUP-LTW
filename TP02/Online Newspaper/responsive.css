@@ -1,0 +1,63 @@
+@media only screen and (max-width: 60em) {
+    #related {
+        display: none;
+    }
+
+    body {
+        width: 100%;
+        grid-template-columns: 100%;
+    }
+
+    #news, body > footer {
+        margin-right: 0;
+    }
+
+}
+
+@media only screen and (max-width: 30em) { 
+    body header h2 {
+        display: none;
+    }
+
+    #signup {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
+    #menu {
+        background-color: #2A2F33;
+        padding: 1em;
+    }
+    #menu ul {
+        display: none;
+    }
+
+    #menu .hamburger::before {
+        content: "\2630";
+        color: white;
+        font-size: 1.2em;
+    }
+
+    #menu .hamburger:checked {
+        content: "\2715";
+    }
+
+    #news article header a {
+        position: relative;
+        text-shadow: none;
+        color: black;
+        left: 0;
+        top: 0;
+        font-size: 3.5vw;
+    }
+
+    #news article header h1 {
+        padding: 1em;
+    }
+
+    #news article p {
+        padding: 0 1em;
+    }
+
+}
