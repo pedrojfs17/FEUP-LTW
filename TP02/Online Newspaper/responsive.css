@@ -4,8 +4,7 @@
     }
 
     body {
-        width: 100%;
-        grid-template-columns: 100%;
+        display: initial;
     }
 
     #news, body > footer {
@@ -29,7 +28,6 @@
         display: block;
         background-color: #2A2F33;
         padding: 1em;
-        width: 100%;
     }
     
     #menu ul {

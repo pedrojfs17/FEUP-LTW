@@ -1,28 +1,51 @@
+body {
+    grid-template-rows: auto auto 1fr 4em;
+}
+
 #menu {
     height: fit-content;
 }
 
-#register {
+#register, #login {
     position: relative;
-    bottom: 10em;
 }
 
-#register h1 {
+#register h1, #login h1 {
     text-align: center;
 }
 
-#register form {
+#register form, #login form {
+    position: relative;
     background-color: white;
-    max-width: 20em;
+    max-width: 18em;
     margin: auto;
     padding: 2em;
 }
 
-#register form * {
+#register form *, #login form * {
     width: 100%;
-    margin: 1em 0em;
+    margin: 0.7em 0em 1em 0em;
+    font-size: 1.1em;
 }
 
-#register form label {
-    font-size: 1.1em;
+#register form label input, #login form label input {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#register form input[type="submit"], #login form input[type="submit"] {
+    font-size: 0.9em;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    width: fit-content;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
