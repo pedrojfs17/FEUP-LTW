@@ -1,0 +1,100 @@
+body {
+    width: 97.3%;
+    margin: 0 0 0 auto;
+    background-image: url("images/stripe.png");
+    font-family: Georgia;
+}
+
+body * {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#header {
+    padding: 1.2em;
+    background-color: black;
+    color: white;
+}
+
+#header h2 {
+    font-size: 1em;
+}
+
+#menu {
+    background-color: #333333;
+    color: white;
+}
+
+#menu ul {
+    padding-inline-start: 0.5em;
+}
+
+#menu ul li {
+    background-color: white;
+    color: black;
+    font-size: 0.8em;
+    display: inline-block;
+    padding: 0.2em 0.7em;
+    margin: 0.75em 0.5em;
+}
+
+#menu ul li:nth-last-child(1) {
+    border: none;
+}
+
+#content, #footer {
+    background-color: white;
+    padding: 0.5em;
+}
+
+.news-item {
+    width: 50em;
+    margin-bottom: 0.5em;
+}
+
+.news-item h3 {
+    font-size: 1.8em;
+}
+
+.news-item img {
+    float: right;
+    margin: 0.5em 0.5em 0.5em 0.1em;
+}
+
+.news-item p {
+    padding: 0.5em 0;
+    font-size: 0.9em;
+}
+
+.news-item .introduction {
+    font-style: italic;
+}
+
+.news-item p a {
+    color: #A9646B;
+}
+
+.news-item ul {
+    background-color: #333333;
+    padding-inline-start: 0;
+}
+
+.news-item ul li {
+    color: white;
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 0.5em 1em;
+}
+
+#footer {
+    text-align: right;
+    padding-right: 43em;
+}

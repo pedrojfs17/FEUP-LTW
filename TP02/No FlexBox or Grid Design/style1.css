@@ -1,0 +1,101 @@
+body {
+    width: 50em;
+    margin: 0 auto;
+    background-color: #DDDDFF;
+    font-family: Verdana;
+}
+
+body * {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#header {
+    padding: 1em;
+    background-color: #666666;
+    color: white;
+}
+
+#header h1 {
+    margin-top: 1em;
+    margin-bottom: 0.7em;
+}
+
+#header h2 {
+    margin-bottom: 1em;
+}
+
+#menu {
+    background-color: #330000;
+    color: white;
+}
+
+#menu ul {
+    padding-inline-start: 0.5em;
+}
+
+#menu ul li {
+    font-size: 0.8em;
+    display: inline-block;
+    padding: 0.25em;
+    padding-right: 0.8em;
+    margin: 0.75em 0;
+    border-right: 1px solid white;
+}
+
+#menu ul li:nth-last-child(1) {
+    border: none;
+}
+
+#content, #footer {
+    background-color: white;
+    padding: 0.5em;
+}
+
+.news-item {
+    border-bottom: 2px solid black;
+    margin-bottom: 0.5em;
+}
+
+.news-item h3 {
+    font-size: 1.8em;
+}
+
+.news-item img {
+    float: left;
+    margin: 0.5em 0.5em 0.5em 0.1em;
+}
+
+.news-item p {
+    padding: 0.5em 0;
+    font-size: 0.9em;
+}
+
+.news-item .introduction {
+    font-style: italic;
+}
+
+.news-item p a {
+    color: blue;
+}
+
+.news-item ul {
+    padding-inline-start: 0;
+}
+
+.news-item ul li {
+    background-color: #333333;
+    color: white;
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
