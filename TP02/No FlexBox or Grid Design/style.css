@@ -1,4 +1,5 @@
 body {
+    position: relative;
     width: 53em;
     margin: 0 auto;
     background-color: #DDDDFF;
@@ -20,22 +21,48 @@ a {
 
 #header {
     padding: 1.2em;
+    width: 47em;
+    position: relative;
+    left: 3.5em;
     background-color: #336699;
     color: white;
 }
 
+#header h1 {
+    position: relative;
+    top: 0.5em;
+}
+
+#header h2 {
+    background-color: #336699;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    -webkit-transform: rotate(90deg);
+    padding: 0.5em;
+    text-align: center;
+    width: 34em;
+    top: 13em;
+    left: -19.3em;
+}
+
 #menu {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 12.5em;
+    height: 94.4em;
+    left: 40.5em;
     background-color: #669933;
     color: white;
-    float: right;
 }
 
 #menu ul {
     padding-inline-start: 0.5em;
-    height: 50em;
 }
 
 #menu ul li {
+    text-align: center;
     font-size: 0.8em;
     padding: 2em 5em;
 }
@@ -45,13 +72,24 @@ a {
 }
 
 #content, #footer {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 36em;
+    right: 12.5em;
+    left: -9.4em;
     background-color: white;
     padding: 0.5em;
 }
 
+#footer {
+    width: 48.5em;
+    left: 3.5em;
+    padding: 0em 0.5em;
+}
+
 .news-item {
     border-bottom: 2px solid black;
-    margin-bottom: 0.5em;
 }
 
 .news-item h3 {
@@ -81,8 +119,8 @@ a {
 }
 
 .news-item ul li {
-    background-color: #333333;
-    color: white;
+    color: black;
+    border-bottom: 4px solid #996633;
     display: inline-block;
     font-size: 0.8em;
     padding: 0.5em;
