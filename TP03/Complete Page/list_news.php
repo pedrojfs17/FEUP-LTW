@@ -47,40 +47,39 @@
       </article>
     </aside>
     <section id="news">
-        <?php
-            $db = new PDO('sqlite:news.db');
+      <?php
+        $db = new PDO('sqlite:news.db');
 
-            $stmt = $db->prepare('SELECT news.*, users.*, COUNT(comments.id) AS comments
-                                FROM news JOIN
-                                    users USING (username) LEFT JOIN
-                                    comments ON comments.news_id = news.id
-                                GROUP BY news.id, users.username
-                                ORDER BY published DESC');
-            $stmt->execute();
-            $articles = $stmt->fetchAll();
+        $stmt = $db->prepare('SELECT news.*, users.*, COUNT(comments.id) AS comments
+                            FROM news JOIN
+                                users USING (username) LEFT JOIN
+                                comments ON comments.news_id = news.id
+                            GROUP BY news.id, users.username
+                            ORDER BY published DESC');
+        $stmt->execute();
+        $articles = $stmt->fetchAll();
 
-            foreach( $articles as $article) {
-                echo '<article>';
-                    echo '<header><h1><a href="news_item.php?id=' . $article['id'] . '">' . $article['title'] . '</a></h1></header>';
-                    $tags = explode(',', $article['tags']);
-                    echo '<img src="http://lorempixel.com/600/300/' . $tags[0] . '/" alt="">';
-
-                    echo '<p>' . $article['introduction'] . '</p>';
-                    echo '<p>' . $article['fulltext'] . '</p>';
-
-                    echo '<footer>';
-                        echo '<span class="author">' . ucfirst($article['username']) . '</span>';
-                        echo '<span class="tags">';
-                            foreach ($tags as $tag) {
-                                echo '<a href="list_news.php">#' . $tag . '</a> ';
-                            }
-                        echo '</span>';
-                        echo '<span class="date">' . date(DATE_RSS, $article['published']) . '</span>';
-                        echo '<a class="comments" href="news_item.php?id=' . $article['id'] . '">' . $article['comments'] . '</a>';
-                    echo '</footer>';
-                echo '</article>';
-              }
-        ?>
+        foreach( $articles as $article) {
+          $tags = explode(',', $article['tags']);
+      ?>
+      <article>
+        <header>
+          <h1><a href="news_item.php?id=<?= $article['id']?>"><?= $article['title']?></a></h1>
+        </header>
+        <img src="http://lorempixel.com/600/300/<?= $tags[0]?>" alt="">
+        <p><?= $article['introduction']?></p>
+        <p><?= $article['fulltext']?></p>
+        <footer>
+          <span class="author"><?= ucfirst($article['username'])?> Woods</span>
+          <span class="tags"><?php foreach( $tags as $tag) {?>
+            <a href="list_news.php"><?= $tag?></a>
+          <?php }?>
+          </span>
+          <span class="date"><?= date(DATE_RSS, $article['published'])?></span>
+          <a class="comments" href="news_item.php?id=<?= $article['id']?>"><?= $article['comments']?></a>
+        </footer>
+      </article>
+      <?php }?>
     </section>
     <footer>
       <p>&copy; Fake News, 2017</p>

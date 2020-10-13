@@ -47,34 +47,35 @@
       </article>
     </aside>
     <section id="news">
+      <?php
+        $db = new PDO('sqlite:news.db');
+        $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = ?');
+        $stmt->execute(array($_GET['id']));
+        $article = $stmt->fetch();
+
+        $tags = explode(',', $article['tags']);
+
+        $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
+        $stmt->execute(array($_GET['id']));
+        $comments = $stmt->fetchAll();
+      ?>
       <article>
-          <?php 
-            $db = new PDO('sqlite:news.db');
-            $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = ?');
-            $stmt->execute(array($_GET['id']));
-            $article = $stmt->fetch();
-
-            echo '<header><h1><a href="news_item.php?id=' . $_GET['id'] . '">' . $article['title'] . '</a></h1></header>';
-            $tags = explode(',', $article['tags']);
-            echo '<img src="http://lorempixel.com/600/300/' . $tags[0] . '/" alt="">';
-
-            echo '<p>' . $article['introduction'] . '</p>';
-            echo '<p>' . $article['fulltext'] . '</p>';
-
-            echo '<section id="comments">';
-            $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
-            $stmt->execute(array($_GET['id']));
-            $comments = $stmt->fetchAll();
-            echo '<h1>' . count($comments) . ' Comments</h1>';
-            foreach ($comments as $comment) {
-                echo '<article class="comment">';
-                echo '<span class="user">' . ucfirst($comment['username']) . '</span>';
-                echo '<span class="date">' . date(DATE_RSS, $comment['published']) . '</span>';
-                echo '<p>' . $comment['text'] . '</p>';
-                echo '</article>';
-            }
-            echo '</section">';
-          ?>
+        <header>
+          <h1><a href="news_item.php?id=<?= $article['id']?>"><?= $article['title']?></a></h1>
+        </header>
+        <img src="http://lorempixel.com/600/300/<?= $tags[0]?>" alt="">
+        <p><?= $article['introduction']?></p>
+        <p><?= $article['fulltext']?></p>
+        
+        <section id="comments">
+          <h1><?= count($comments)?> Comments</h1>
+          <?php foreach ($comments as $comment) {?>
+            <article class="comment">
+              <span class="user"><?= ucfirst($comment['username'])?></span>
+              <span class="date"><?= date(DATE_RSS, $comment['published'])?></span>
+              <p><?= $comment['text']?></p>
+            </article>
+          <?php }?>
           <form>
             <h2>Add your voice...</h2>
             <label>Username 
@@ -89,18 +90,16 @@
             <input type="submit" value="Reply">
           </form>
         </section>
-        <?php 
-            echo '<footer>';
-            echo '<span class="author">' . ucfirst($article['username']) . '</span>';
-            echo '<span class="tags">';
-                foreach ($tags as $tag) {
-                    echo '<a href="list_news.php">#' . $tag . '</a> ';
-                }
-            echo '</span>';
-            echo '<span class="date">' . date(DATE_RSS, $article['published']) . '</span>';
-            echo '<a class="comments" href="news_item.php?id=' . $_GET['id'] . '">' . count($comments) . '</a>';
-            echo '</footer>';
-        ?>
+        <footer>
+          <span class="author"><?= ucfirst($article['username']) ?></span>
+          <span class="tags">
+            <?php foreach($tags as $tag) {?>
+              <a href="list_news.php"><?= $tag?></a>
+            <?php }?>
+          </span>
+          <span class="date"><?= date(DATE_RSS, $article['published'])?></span>
+          <a class="comments" href="news_item.php?id=<?= $article['id']?>"><?= count($comments)?></a>
+        </footer>
       </article>
     </section>
     <footer>
