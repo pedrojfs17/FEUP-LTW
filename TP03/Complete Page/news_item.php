@@ -48,16 +48,12 @@
     </aside>
     <section id="news">
       <?php
-        $db = new PDO('sqlite:news.db');
-        $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = ?');
-        $stmt->execute(array($_GET['id']));
-        $article = $stmt->fetch();
+        include_once('database/connection.php');
+        include_once('database/news.php');
 
+        $article = getArticle($_GET['id']);
         $tags = explode(',', $article['tags']);
-
-        $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
-        $stmt->execute(array($_GET['id']));
-        $comments = $stmt->fetchAll();
+        $comments = getComments($_GET['id']);
       ?>
       <article>
         <header>
