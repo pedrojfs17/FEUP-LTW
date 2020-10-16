@@ -6,7 +6,9 @@
     <img src="http://picsum.photos/600/300/" alt="">
     <p><?= $article['introduction']?></p>
     <p><?= $article['fulltext']?></p>
+    <?php if (array_key_exists('username',$_SESSION) && !empty($_SESSION['username'])) {?>
     <p><a href="edit_news.php?id=<?= $article['id']?>">Edit</a></p>
+    <?php }?>
     <section id="comments">
       <?php include('templates/comments/list_comments.php')?>
       <form>
