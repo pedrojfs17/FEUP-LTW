@@ -11,17 +11,25 @@
         return $stmt->fetchAll();
     }
 
-    function getArticle(int $id) {
+    function getArticle($id) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = ?');
         $stmt->execute(array($id));
-        return $stmt->fetch();;
+        return $stmt->fetch();
     }
 
-    function getComments(int $id) {
+    function getComments($id) {
         global $db;
         $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
         $stmt->execute(array($id));
         return $stmt->fetchAll();
+    }
+
+    function updateDatabase($id, $title, $introduction, $fulltext) {
+        global $db;
+        $stmt = $db->prepare('UPDATE news 
+                            SET title = ?, introduction = ?, fulltext = ?
+                            WHERE id = ?');
+        $stmt->execute(array($title, $introduction, $fulltext, $id));
     }
 ?>
