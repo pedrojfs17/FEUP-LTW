@@ -4,7 +4,7 @@ function updateTotal() {
 
     tr.forEach((line) => {
         if (line.children[0].tagName != 'TH') {
-            inputValue = line.children[1].children[0].attributes['value'].value;
+            inputValue = line.children[1].children[0].value;
             total += parseInt(inputValue);
         }
     })
