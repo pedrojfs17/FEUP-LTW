@@ -34,7 +34,6 @@ form.addEventListener('submit', function(event) {
     tr.append(td2);
 
     inputQuantity.addEventListener('change', function(event) {
-        inputQuantity.setAttribute('value', event.target.value);
         updateTotal();
     });
 
