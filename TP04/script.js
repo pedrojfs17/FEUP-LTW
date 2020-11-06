@@ -23,6 +23,11 @@ form.addEventListener('submit', function(event) {
     inputRemove.setAttribute('value', 'Remove');
     td3.append(inputRemove);
 
+    inputRemove.onclick = (event) => {
+        event.preventDefault()
+        tr.remove()
+      }
+
     tr.append(td1);
     tr.append(td2);
     tr.append(td3);
