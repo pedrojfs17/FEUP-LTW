@@ -1,5 +1,19 @@
+function updateTotal() {
+    let tr = document.querySelectorAll('#products tbody tr');
+    let total = 0;
+
+    tr.forEach((line) => {
+        if (line.children[0].tagName != 'TH') {
+            inputValue = line.children[1].children[0].attributes['value'].value;
+            total += parseInt(inputValue);
+        }
+    })
+
+    document.getElementById('total').innerHTML = total;
+}
+
 let form = document.getElementsByTagName('form')[0]
-console.log(form.outerHTML);
+
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -44,16 +58,3 @@ form.addEventListener('submit', function(event) {
     alert('Submitted!');
 })
 
-function updateTotal() {
-    let tr = document.querySelectorAll('#products tbody tr');
-    let total = 0;
-
-    tr.forEach((line) => {
-        if (line.children[0].tagName != 'TH') {
-            inputValue = line.children[1].children[0].attributes['value'].value;
-            total += parseInt(inputValue);
-        }
-    })
-
-    document.getElementById('total').innerHTML = total;
-}
