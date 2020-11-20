@@ -2,7 +2,7 @@
   <h1><?=count($comments)?> Comment<?=count($comments)==1?'':'s'?></h1>
   <?php foreach ($comments as $comment) { ?>
     <article class="comment" data-id="<?=$comment['id']?>">
-      <span class="user"><?=$comment['name'] ? $comment['name'] : "Anonymous"?></span>
+      <span class="user"><?=$comment['name']?></span>
       <span class="date"><?=date('Y-m-d H:i:s', $comment['published']);?></span>
       <p><?=$comment['text']?></p>
     </article>

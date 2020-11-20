@@ -1,7 +1,7 @@
 <?php
   function getCommentsByNewId($id) {
     global $db;
-    $stmt = $db->prepare('SELECT * FROM comments LEFT JOIN users USING (username) WHERE news_id = ?');
+    $stmt = $db->prepare('SELECT id, news_id, published, text, COALESCE(name, username) as name FROM comments LEFT JOIN users USING (username) WHERE news_id = ?');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
   }
@@ -15,7 +15,7 @@
 
   function fetchComments($newsID, $lastCommentID) {
     global $db;
-    $stmt = $db->prepare('SELECT * FROM comments WHERE news_id = ? AND id > ?');
+    $stmt = $db->prepare('SELECT id, news_id, published, text, COALESCE(name, username) as username FROM comments LEFT JOIN users USING (username) WHERE news_id = ? AND id > ?');
     $stmt->execute(array($newsID, $lastCommentID));
     return $stmt->fetchAll();
   }
