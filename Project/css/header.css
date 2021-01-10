@@ -1,0 +1,58 @@
+/**
+ * Primary header
+ */
+body > header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 0;
+    text-align: center;
+    color: var(--yellow-color);
+}
+
+body > header h1 {
+    text-align: left;
+    margin: 0;
+    margin-left: 2em;
+    flex-grow: 1;
+    grid-column-start: 1;
+}
+
+body > header h1 a {
+    font-family: var(--logo-font), sans-serif;
+}
+
+body > header nav {
+    text-align: right;
+    font-size: 1.5em;
+    padding: 0;
+    margin-right: 2em;
+}
+
+body > header nav li {
+    display: inline-block;
+    border-right: 1px solid var(--yellow-color);
+    padding: 0 1em;
+}
+
+body>header nav li:last-child {
+    border: none;
+}
+
+@media only screen and (max-width: 500px) {
+    body>header h1,
+    body>header nav {
+        margin: 0 0.5em;
+    }
+
+    body>header nav li {
+        font-size: 0.7em;
+    }
+}
+
+body > nav {
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    background-color: var(--yellow-color);
+}

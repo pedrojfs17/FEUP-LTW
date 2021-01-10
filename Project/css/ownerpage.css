@@ -1,0 +1,468 @@
+/*Owner page*/
+
+#owner-menu,
+#shelter-menu,
+#shelter-collaboration {
+    width: 90%;
+    margin: 2em auto;
+    grid-column: 1;
+}
+
+#owner-menu input,
+#shelter-menu input,
+#shelter-collaboration input {
+    display: block;
+    width: 100%;
+    margin: 0em auto 2em auto;
+}
+
+#owner-page {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+#shelter-collaborators-section {
+    text-align: center;
+    display: block;
+    flex-direction: column;
+    margin: 2em;
+    grid-column: span 2;
+}
+
+#shelter-collaborators-section #shelter-collaborators {
+    display: flex;
+    flex-direction: row;
+}
+
+#shelter-collaborators-section #shelter-collaborators .featured-user {
+    margin: 1em;
+}
+
+@media only screen and (max-width: 1000px) {
+    #owner-page {
+        display: flex;
+        flex-flow: column;
+    }
+    #owner-page #notificationButton {
+        display: block;
+        order: 1;
+    }
+    #owner-menu {
+        order: 3;
+    }
+    #notifications {
+        order: 2;
+        display: none;
+    }
+    #notifications.active {
+        display: block;
+        margin-top: 0.5em;
+    }
+    #shelter-collaborators-section #shelter-collaborators {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/*Notification Centre*/
+
+#notificationButton {
+    display: none;
+    width: 90%;
+    margin: 2em auto 0em auto;
+}
+
+#notificationButton input {
+    width: 100%;
+}
+
+#notifications {
+    grid-column: 2;
+    margin: 2em auto;
+    width: 90%;
+}
+
+#notifications h1 {
+    margin: 0 0 1em 0;
+    font-size: 2em;
+}
+
+#notifications article {
+    background-color: var(--light-yellow-color);
+    border-radius: 3px;
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#notifications .new-notif {
+    background-color: var(--yellow-color);
+    color: white;
+}
+
+#notifications .notif-text {
+    margin: 1em;
+    display: inline-block;
+}
+
+#notifications .notif-date {
+    display: inline-block;
+    margin: auto 1em;
+    text-align: right;
+    font-size: 0.8em;
+    flex: right;
+}
+
+
+/**
+ * Questions and Proposals
+ */
+
+#pets-owned,
+#owner-qp {
+    max-width: 70em;
+    margin: auto;
+}
+
+#pet-owned,
+#owner-qp,
+#shelter-collaboration,
+#questions-replies {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+#pet-owned h1,
+#owner-qp h1,
+#shelter-noncollaborators h1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 0;
+}
+
+#pet-owned h2,
+#owner-qp h2,
+#shelter-noncollaborators h2,
+#questions-replies h2 {
+    font-size: 2em;
+    margin: 0;
+    padding-top: 1em;
+}
+
+#pet-owned h3,
+#owner-qp h3,
+#shelter-noncollaborators h3,
+#pet-proposals h3 {
+    font-size: 1.5em;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.question,
+.proposal,
+.collaborator,
+.reply {
+    margin: 1em;
+}
+
+.question .user,
+.proposal .user,
+.collaborator .user,
+.reply .user {
+    font-size: 1em;
+    font-style: italic;
+}
+
+.question .user:after {
+    font-style: normal;
+    content: ' said:';
+}
+
+.reply .user:after {
+    font-style: normal;
+    content: ' replied:';
+}
+
+.question .date,
+.reply .date {
+    float: right;
+}
+
+.proposal .date:before {
+    content: 'at: ';
+}
+
+.question p {
+    background-color: #e2e2e2;
+    padding: 1em;
+}
+
+.reply p {
+    background-color: #bbbbbb;
+    padding: 1em;
+}
+
+.question p:before,
+.reply p::before {
+    content: '\201C';
+    font-size: 2em;
+    position: relative;
+    top: 15px;
+    color: #ccc;
+}
+
+.reply-form .reply-button {
+    padding: 1em 2em;
+}
+
+.question form {
+    display: flex;
+}
+
+.question textarea {
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    resize: none;
+    width: 100%;
+}
+
+.proposal {
+    display: flex;
+    align-items: center;
+    height: 3em;
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.proposal span,
+.proposal form,
+.collaborator form {
+    padding-right: 1em;
+    margin: 0;
+}
+
+.proposal .proposal-response {
+    display: flex;
+    align-items: center;
+    height: 3em;
+    padding: 0 1em;
+    border-radius: 2px;
+    user-select: none;
+}
+
+.proposal .proposal-response.accept {
+    background-color: var(--success-bg-color);
+}
+
+.proposal .proposal-response.decline {
+    background-color: var(--error-bg-color);
+}
+
+.proposal .button,
+.proposal-details .button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1em;
+    border-radius: 2px;
+    margin-inline: 5px;
+    font-family: var(--sans-font), sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+}
+
+.proposal .button.accept {
+    background-color: var(--confirm-bg-color);
+}
+
+.proposal .button.decline,
+.proposal .button.cancel {
+    background-color: var(--decline-bg-color);
+}
+
+.proposal .button.cancel,
+.proposal .button.undo {
+    height: 80%;
+    vertical-align: center;
+    padding: 0 0.5em;
+    margin-left: 1em;
+}
+
+.proposal .button.undo {
+    background-color: var(--medium-color);
+}
+
+.collaborator form input[name="remove_button"] {
+    background-color: #a52a2a;
+}
+
+.user-proposal-header {
+    padding: 0 0.5em;
+    display: flex;
+    align-items: center;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-color: var(--light-color);
+    height: 4em;
+    cursor: pointer;
+}
+
+.proposal-date {
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.proposal-details {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--lighter-color);
+    overflow: hidden;
+    height: 0;
+}
+
+.proposal-details h4 {
+    margin: 0;
+}
+
+.proposal-details.active {
+    height: auto;
+}
+
+.proposal-details .button {
+    padding: 0 1em;
+    border-radius: 2px;
+    font-family: var(--sans-font), sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    height: 3em;
+    align-self: center;
+}
+
+.proposal-details .button.confirm,
+.proposal-details .button.accept {
+    color: var(--confirm-bg-color);
+}
+
+.proposal-details .button.withdraw,
+.proposal-details .button.reject {
+    color: var(--decline-bg-color);
+}
+
+.proposal-details .button.confirm:hover,
+.proposal-details .button.accept:hover {
+    color: var(--success-fg-color);
+    background-color: var(--success-bg-color);
+}
+
+.proposal-details .button.withdraw:hover,
+.proposal-details .button.reject:hover {
+    color: var(--error-fg-color);
+    background-color: var(--error-bg-color);
+}
+
+.proposal-motivation {
+    padding: 1em;
+    width: 70%;
+    color: var(--greyed-out);
+    font-size: 18px;
+}
+
+.proposal-motivation h4 {
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0.5em;
+}
+
+.proposal-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.proposal-state {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    padding: 1em;
+    margin-left: auto;
+    text-transform: capitalize;
+}
+
+.user-proposal[data-decision='approved'] .proposal-state {
+    background-color: var(--success-bg-color);
+    color: var(--success-fg-color);
+}
+
+.user-proposal[data-decision='pending'] .proposal-state {
+    background-color: var(--light-blue-color);
+    color: var(--dark-color);
+}
+
+.user-proposal[data-decision='rejected'] .proposal-state {
+    background-color: var(--error-bg-color);
+    color: var(--error-fg-color);
+}
+
+.user-proposal[data-decision='withdrawn'] .proposal-state {
+    background-color: plum;
+    color: purple;
+}
+
+.user-proposal[data-decision='complete'] .proposal-state {
+    background-color: #ffffae;
+    color: #ffbb00;
+}
+
+@media screen and (max-width: 1200px) {
+    #pets-owned {
+        margin: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #pets-owned {
+        margin: 1em;
+    }
+    .reply-form {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .reply-button {
+        width: fit-content;
+        margin: 0.5em;
+        padding: 1.5em 0.5em;
+    }
+    .proposal-motivation {
+        width: 100%;
+    }
+    .proposal-state {
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .proposal-details {
+        flex-direction: column;
+    }
+    .proposal-details .proposal-motivation {
+        width: 100%;
+    }
+    .proposal-details .proposal-state {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

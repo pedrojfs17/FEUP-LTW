@@ -1,0 +1,59 @@
+/**
+ * Edit Account Page
+ */
+
+#edit-account {
+    background-color: var(--light-yellow-color);
+    display: grid;
+
+    grid-template-columns: 60% 40%;
+}
+
+@media only screen and (max-width: 900px) {
+    #edit-account {
+        display: block;
+    }
+}
+
+#setup-profile-title {
+    margin-top: 0;
+    text-align: center;
+    grid-column: span 2;
+}
+
+#edit-account form {
+    margin: 0;
+    padding: 1em;
+    background-color: var(--white-color);
+}
+
+#edit-account input {
+    display: block;
+    margin: 1em 0;
+    width: 100%;
+}
+
+#edit-account > * {
+    border: 10px solid var(--light-yellow-color);
+    height: auto;
+}
+
+#edit-account header {
+    background-color: var(--light-yellow-color);
+    color: var(--white-color);
+    text-align: center;
+    grid-column: span 2;
+}
+
+#edit-account .profile-image {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+#edit-sensitive form:first-of-type {
+    border-bottom: 15px solid var(--light-yellow-color);
+}
+

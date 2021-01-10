@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/**
+ * Body
+ */
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    --bg-color: #FFFFFF;
+    --white-color: #FFFFFF;
+    --yellow-color: #FF9F1C;
+    --light-yellow-color: #FFBF69;
+    --blue-color: #2EC4B6;
+    --dark-blue-color: #1b7a71;
+    --light-blue-color: #CBF3F0;
+    --light-grey-color: #eeeeee;
+    --error-bg-color: #de1a1a;
+    --error-fg-color: #FFFFFF;
+    --success-fg-color: #000000;
+    --success-bg-color: #c2ff47;
+    --heading-font: 'Oswald';
+    --body-font: 'Lato';
+    --logo-font: 'Indie Flower';
+    background-color: var(--bg-color);
+}
+
+
+/**
+   * Generic
+   */
+
+a,
+p,
+input,
+li,
+span,
+label,
+div {
+    font-family: var(--body-font), sans-serif;
+}
+
+a {
+    color: var(--yellow-color);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font), sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+input[type=text],
+input[type=password] {
+    box-sizing: border-box;
+    padding: 1em 0;
+    border: 0;
+    border-bottom: 1px solid var(--light-color);
+    background-color: var(--panel-color);
+}
+
+input[type="submit"],
+input[type="button"] {
+    padding: 1em;
+    background: var(--yellow-color);
+    color: var(--white-color);
+    font-family: var(--body-font), sans-serif;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: var(--light-yellow-color);
+    padding: 1em;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.footer-container {
+    width: 300px;
+    margin: auto;
+}
+
+footer h1 {
+    color: var(--yellow-color);
+}
+
+footer h1>a {
+    font-family: var(--heading-font);
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer li a {
+    color: white;
+}

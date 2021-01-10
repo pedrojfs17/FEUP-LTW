@@ -1,0 +1,166 @@
+#login,
+#signup {
+    width: 30em;
+    margin: 2em auto;
+    border: 1px solid var(--light-yellow-color);
+    background: white;
+}
+
+#login header,
+#signup header {
+    color: var(--white-color);
+    padding: 2em 0;
+    text-align: center;
+    text-transform: uppercase;
+    background: var(--yellow-color);
+}
+
+#login header h2,
+#signup header h2 {
+    margin: 0;
+}
+
+#login form,
+#signup form {
+    margin: 0;
+    padding: 1em;
+    background-color: var(--white-color);
+}
+
+#login input,
+#signup input {
+    display: block;
+    margin: 1em 0;
+    width: 100%;
+}
+
+#login footer,
+#signup footer {
+    background-color: var(--light-blue-color);
+}
+
+#login footer p,
+#signup footer p {
+    color: black;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 1em;
+    text-align: center;
+}
+
+#login footer a,
+#signup footer a {
+    color: var(--dark-blue-color);
+    font-weight: bold;
+}
+
+#signup .button-box {
+    position: relative;
+    box-shadow: 0 0 10px 2px var(--light-yellow-color);
+    background-color: var(--white-color);
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 30px;
+}
+
+#signup .toggle-btn {
+    width: 49%;
+    padding: 10px 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#signup .toggle-btn:first-of-type {
+    font-size: 1em;
+    color: white;
+}
+
+#signup .toggle-btn:last-of-type {
+    font-size: 0.8em;
+}
+
+#signup #btn {
+    border-radius: 30px;
+    top: 0;
+    left: 0%;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: var(--yellow-color);
+    transition: .5s;
+}
+
+#user-colaborator {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#user-colaborator .toggle-colaborator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-colaborator .toggle-colaborator input {
+    position: relative;
+    margin: 0;
+    width: 40%;
+    height: 2em;
+    -webkit-appearance: none;
+    box-shadow: 0 0 10px 2px var(--light-yellow-color);
+    background: var(--white-color);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#user-colaborator .toggle-colaborator input:checked {
+    background: var(--yellow-color);
+}
+
+#user-colaborator .toggle-colaborator input::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: white;
+    border-radius: 30px;
+    left: 0;
+    transition: .5s;
+}
+
+#user-colaborator .toggle-colaborator input:checked::before {
+    left: 50%;
+}
+
+#user-colaborator #shelterSearch {
+    grid-column: span 2;
+    width: 100%;
+    display: none;
+    grid-template-columns: 40% 60%;
+}
+
+#user-colaborator #shelterSearch p {
+    padding: 1em;
+    color: var(--yellow-color);
+}
+
+#user-colaborator #shelterSearch select {
+    box-sizing: border-box;
+    height: 60%;
+    margin: 1em;
+    border: 0;
+    border-bottom: 1px solid var(--light-yellow-color);
+    background-color: var(--white-color);
+}
+
+
+@media only screen and (max-width: 500px) {
+    #login, #signup {
+        width: 100%;
+        margin: 0;
+    }
+}

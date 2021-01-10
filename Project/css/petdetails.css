@@ -1,0 +1,413 @@
+#pet-page {
+    width: auto;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+#details {
+    grid-column: 2;
+    grid-row: span 2;
+    padding: 1em;
+}
+
+#details > * {
+    margin: 0em;
+    padding: 0em;
+}
+
+#details h1 {
+    font-size: 4em;
+}
+
+#details h3 {
+    font-size: 2em;
+    color: gray;
+}
+
+#details ul {
+    list-style-type: none;
+}
+
+#details li{
+    position: relative;
+    margin: 0.5rem;
+}
+#details li .tag {
+    font-weight: bold;
+}
+
+.pet-state .state-description,
+.pet-age .age-description {
+    display: inline-flex;
+    visibility: hidden;
+    max-width: 20em;
+    background-color: var(--yellow-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.25em;
+    font-weight: normal;
+    flex-wrap: normal;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+}
+
+.pet-state .state-description{
+    left: 30%;
+}
+
+.pet-age .age-description{
+    left: 20%;
+}
+
+#pet-images {
+    display: grid;
+    position: relative;
+    margin: 0.5em;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: start;
+}
+#pet-images img {
+    object-fit: cover;
+    grid-column: span 2;
+    width: 40vw;
+    height: 40vw;
+    border: 5px solid var(--yellow-color);
+    border-radius: 20px;
+}
+
+.display-left {
+    left: 7%;
+}
+
+.display-right {
+    right: 7%;
+}
+
+.slideshow-button {
+    position: absolute;
+    bottom: 0;
+    border: none;
+    color: white;
+    padding: 0.4em 0.8em;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    width: 20%;
+    max-height: 50px;
+    background-color: var(--yellow-color);
+}
+
+#questions-replies {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0em;
+    margin: 1em;
+}
+
+#questions-replies > * {
+    padding: 0em;
+    margin: 0.5em 0 0 0;
+    flex:1;
+}
+
+
+
+.reply {
+    position: relative;
+    left: 2%;
+    width: 98%;
+    margin-bottom: 1em;
+}
+
+
+.question-form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    background-color: var(--light-yellow-color);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    font-family: var(--sans-font);
+    font-size: 22px;
+    max-height: 10.6em;
+}
+
+
+#adopt-button {
+    grid-column: span 2;
+    grid-row: 2;
+    border: none;
+    color: white;
+    padding: 0.8em 1em;
+    text-decoration: none;
+    font-size: 1.2em;
+    width: auto;
+    margin: 1em auto;
+    display: inline-block;
+    background-color: var(--yellow-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#adopt-button span {
+    font-size: 18px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+#adopt-button.open::before {
+    content: 'Close';
+}
+
+#adopt-button.open:hover {
+    background-color: var(--error-bg-color);
+}
+
+#adopt-button.open span {
+    display: none;
+}
+
+
+.adoption-form {
+    display: grid;
+    width: 100%;
+    background-color: var(--light-yellow-color);
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.5s ease;
+    font-family: var(--sans-font);
+    font-size: 22px;
+}
+
+
+.adoption-form.show {
+    max-height: 10.6em;
+    padding: 1em;
+}
+
+.adoption-form textarea,
+.question-form textarea {
+    grid-column: span 2;
+    width: 100%;
+    min-height: 10em;
+    resize: none;
+    font-size: 18px;
+}
+
+.char-counter {
+    position: relative;
+    align-self: right;
+    top: -100px;
+}
+
+.question-form .char-counter {
+    left: 180%;
+}
+
+.adoption-form .char-counter {
+    left:170%;
+}
+
+.adoption-form .char-counter,
+.adoption-form #char-count,
+.question-form #char-count-question,
+.question-form .char-counter {
+    font-size: 16px;
+    width: 100%;
+    margin-top: 0.3em;
+    color: #000;
+}
+
+.adoption-form input[type='button'],
+.question-form input[type='button'] {
+    grid-column: span 2;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#details .adoption-form.success,
+#questions-replies .question-form.success,
+#pet-questions .reply-form.success {
+    display: block;
+    text-align: center;
+    background-color: var(--success-bg-color);
+    color: var(--success-fg-color);
+}
+
+#questions-replies .question-form.success,
+#pet-questions .reply-form.success,
+#details .adoption-form.success.show{
+    padding: 1em;
+}
+
+#details .adoption-form.error,
+#questions-replies .question-form.error,
+#pet-questions .reply-form.error {
+    display: block;
+    text-align: center;
+    background-color: var(--error-bg-color);
+    color: var(--error-fg-color);
+}
+
+#questions-replies .question-form.error,
+#pet-questions .reply-form.error,
+#details .adoption-form.error.show{
+    padding: 1em;
+}
+
+
+
+#add-pet {
+    max-width: 60vw;
+    margin: auto;
+}
+
+#pet-page .edit-details,
+#add-pet .pet-add {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+#pet-page .edit-details label,
+#add-pet .pet-add label:not([for=upload-file-button]) {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+#pet-page .edit-details input,
+#add-pet .pet-add input,
+#pet-page .edit-details select {
+    border-bottom: solid var(--light-yellow-color) 1px;
+}
+
+.edit-details select,
+.pet-add select {
+    padding: 0.5em 0;
+    font-size: 16px;
+    font-family: var(--serif-font);
+    background-color: var(--white-color);
+    border: none;
+    border-bottom: solid var(--light-yellow-color) 1px;
+}
+
+.select-message {
+    display: inline;
+    color: var(--error-fg-color);
+    margin-bottom: 1em;
+    font-family: var(--serif-font);
+}
+
+#details .upload-image,
+#add-pet .upload-image {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 1em;
+}
+
+#details .upload-image input {
+    width:100%;
+    margin: 1em;
+}
+
+#add-pet .upload-image input {
+    width: 60%;
+    margin: 1em;
+}
+
+
+.upload-image label {
+    margin: 1em;
+    display: block;
+    width: 100%;
+    color: white;
+    padding: 1em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background-color: var(--yellow-color);
+    cursor: pointer;
+}
+
+#upload-file-button {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.pet-state {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.pet-state:hover .state-description,
+.pet-age:hover .age-description {
+    visibility: visible;
+}
+
+#details .delete-pet {
+    display:flex;
+    flex-direction:column;
+    justify-items:center;
+    padding: 1em;
+}
+
+.delete-pet .delete-button{
+    width:100%;
+    align-self:center;
+    
+}
+
+@media only screen and (max-width: 800px) {
+    #details {
+        grid-row: 2;
+        grid-column: span 2;
+    }
+    #pet-images{
+        grid-column: span 2;
+    }
+
+    .question-form .char-counter {
+        left: 160%;
+    }
+    
+    .adoption-form .char-counter {
+        left:160%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    #add-pet {
+        max-width: 100%;
+    }
+    .upload-image input {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .upload-image input {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

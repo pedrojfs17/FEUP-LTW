@@ -1,0 +1,230 @@
+#pet-cards {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pet-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 25vh 20vh;
+    grid-template-areas: "image""text";
+    border-radius: 18px;
+    background: var(--white-color);
+    box-shadow: 5px 5px 15px rgba(206, 206, 206, 0.9);
+    text-align: center;
+    margin: 1em;
+    position: relative;
+    max-height: 45vh;
+    max-width: 20em;
+}
+
+.card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    justify-content: center;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px 18px 0 0;
+    transition: .5s ease;
+}
+
+.card-image .fav-icon {
+    transition: .5s ease;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+}
+
+.card-image .fav-icon i {
+    color: var(--blue-color);
+    font-size: 50px;
+}
+
+.card-image:hover img {
+    opacity: 0.3;
+}
+
+.card-image:hover .fav-icon {
+    opacity: 0.8;
+}
+
+.card-text {
+    grid-area: text;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.card-text .species {
+    color: var(--blue-color);
+    font-size: 13px;
+}
+
+.card-text h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.card-text p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.card-stats {
+    grid-area: text;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background: var(--light-blue-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+.card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--dark-blue-color);
+    padding: 10px;
+}
+
+.card-stats .type {
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.card-stats .value {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.pet-card:hover {
+    box-shadow: 5px 5px 15px grey;
+}
+
+.pet-card:hover .card-stats {
+    height: 100%;
+}
+
+.card-link {
+    grid-row: 2;
+    grid-column: span 3;
+    margin-top: 1em;
+}
+
+.card-link a:hover {
+    background: black;
+}
+
+.card-link a {
+    background: var(--blue-color);
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.fav-icon.liked i {
+    animation: size .4s;
+}
+
+@keyframes size {
+    0% {
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.fav-icon:hover {
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* Search parameters*/
+
+#search-cards {
+    display: flex;
+    flex-direction: row;
+    margin: 0 5em;
+}
+
+#search-cards h3 {
+    font-size: 1.5em;
+    border-bottom: 2px solid gray;
+    margin-bottom: 0;
+}
+
+#search-filters{
+    align-self: flex-start;
+    width:25%;
+    max-width: 16em;
+}
+
+.search-parameter {
+    border-bottom: 1px dotted gray;
+    display: block;
+    font-size: 1.25em;
+    padding: 1em;
+}
+
+.search-parameter label {
+    margin: 0.5em;
+    display: block;
+    font-size: 0.75em;
+}
+
+@media screen and (max-width: 1300px) {
+    #search-cards {
+        flex-direction: column;
+    }
+    #search-filters{
+        align-self: center;
+        width:100%;
+        max-width: 100%;
+    }
+    .search-parameter {
+        display: none;
+    }
+    #search-filters:hover .search-parameter {
+        display: block;
+    }
+    #pet-cards {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .pet-card {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+

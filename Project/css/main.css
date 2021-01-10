@@ -1,0 +1,414 @@
+/*Search for pet section*/
+
+#search-for-pet {
+    background-color: var(--yellow-color);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom: 1em;
+}
+
+
+@media only screen and (max-width:400px){
+    #search-for-pet img{
+        display: none;
+    }
+}
+
+#search-for-pet > *{
+    margin: 0;
+}
+
+#search-for-pet h1 {
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+
+#search-for-pet h2 {
+    text-align: center;
+    color: white;
+}
+
+#search-for-pet form {
+    width: 50vw;
+    margin: 1em;
+    position: relative;
+}
+
+#search-for-pet form input[type="submit"] {
+    width: 100%;
+    color: white;
+    background-color: var(--light-yellow-color);
+    border-radius: 10px;
+}
+
+#search-for-pet form i {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 5%;
+}
+
+/* Main Page section*/
+
+#main-page {
+    text-align: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    width: 70%;
+    margin-bottom: 2em;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.main-container {
+    border-radius: 20px;
+    background-color: var(--light-grey-color);
+    width: 100%;
+    height: 100%;
+}
+
+.main-container h2 {
+    font-size: 2.3em;
+    margin: auto 0;
+    width: 100%;
+}
+
+.featured-container {
+    margin:1em;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    flex-grow:33.3%;
+}
+.featured-container h2 {
+    margin: 0;
+    margin-bottom: 0.1em;
+}
+
+#adopt-why,
+#team {
+    flex-basis:66.6%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    
+}
+
+#team > :first-child {
+    padding:0.5em;
+}
+
+
+@media only screen and (max-width:1250px){
+    #main-page {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .featured-container {
+        flex-grow:100%;
+    }
+    #adopt-why,
+    #team {
+    flex-basis:100%;
+    
+    }
+    
+}
+
+@media only screen and (max-width:800px){
+    #main-page {
+        display: block;
+    }
+    
+}
+
+
+/*Reasons to adopt*/
+
+#adopt-reasons {
+    display: grid;
+    grid-template-rows: 7vh 7vh 7vh 7vh 7vh;
+    row-gap: 1vh;
+    justify-items: center;
+    align-items: center;
+}
+
+#adopt-reasons p {
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    color: gray;
+}
+
+@media only screen and (max-width:450px){
+    #adopt-reasons {
+        padding: 2em 0;
+    }
+}
+
+#adopt-reasons p:nth-child(1) {
+    animation: reasonsAnimation 15s linear 0s infinite;
+}
+
+#adopt-reasons p:nth-child(2) {
+    animation: reasonsAnimation 15s linear 3s infinite;
+}
+
+#adopt-reasons p:nth-child(3) {
+    animation: reasonsAnimation 15s linear 6s infinite;
+}
+
+#adopt-reasons p:nth-child(4) {
+    animation: reasonsAnimation 15s linear 9s infinite;
+}
+
+#adopt-reasons p:nth-child(5) {
+    animation: reasonsAnimation 15s linear 12s infinite;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius: 20px;
+}
+
+@keyframes reasonsAnimation {
+    0% {
+        font-size: 1em;
+        background-color: var(--light-grey-color);
+    }
+    5% {
+        font-size: 1.2em;
+        color: black;
+        background-color: var(--light-blue-color);
+    }
+    15% {
+        font-size: 1.2em;
+        color: black;
+        background-color: var(--light-blue-color);
+    }
+    20% {
+        font-size: 1em;
+        color: gray;
+        background-color: var(--light-grey-color);
+    }
+}
+
+
+/*Featured containers*/
+
+#featured-pets {
+    grid-column: span 2;
+}
+
+.featured-user, .featured-shelter {
+    width: 20vw;
+    height: 20vw;
+    max-width: 18em;
+    max-height: 18em;
+    min-width: 12em;
+    min-height: 12em ;
+}
+
+.featured-user img, .featured-shelter img {
+    width: 12vw;
+    height: 12vw;
+    max-width: 16em;
+    max-height: 16em;
+    min-width: 5em;
+    min-height: 5em ;
+}
+
+.user-card, .shelter-card {
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#members {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.team-member img {
+    width: 10vw;
+    height: 10vw;
+    min-width: 5em;
+    min-height: 5em;
+    border: 5px solid var(--yellow-color);
+    border-radius: 20px;
+}
+
+@media only screen and (max-width:1000px){
+    #members{
+        flex-direction: column;
+    }
+}
+
+
+/*Messages*/
+
+body>#messages div {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+}
+
+body>#messages .error {
+    color: var(--error-fg-color);
+    background-color: var(--error-bg-color);
+}
+
+body>#messages .success {
+    color: var(--success-fg-color);
+    background-color: var(--success-bg-color);
+}
+
+
+/* Confirmation Form */
+
+.confirmationBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.confirmationBtn:hover {
+    opacity: 1;
+}
+
+.cancelbtn {
+    background-color: #ccc;
+    color: black;
+}
+
+
+/* Add a color to the delete button */
+
+.confirmbtn {
+    background-color: var(--yellow-color);
+    color: white;
+}
+
+
+/* The Modal (background) */
+
+.confirmationForm {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background: rgba(0, 0, 0, 0.75);
+    padding-top: 50px;
+}
+
+
+/* Modal Content/Box */
+
+.form-content {
+    padding: 15px;
+    text-align: center;
+    background: rgba(233, 233, 233, 1);
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Modal Close Button (x) */
+
+.close-confirmation {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close-confirmation:hover,
+.close-confirmation:focus {
+    color: var(--error-bg-color);
+    cursor: pointer;
+}
+
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Change styles for cancel button and delete button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    .cancelbtn,
+    .confirmbtn {
+        width: 100%;
+    }
+}
+
+.dropdown-list {
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .15);
+    height: 0;
+    max-height: 20vh;
+    overflow-y: scroll;
+    display: none;
+    transition: height .5s ease-in-out;
+  }
+  
+  .dropdown-option {
+    padding: 0.5em;
+  }
+  
+  .dropdown-label {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    line-height: 2;
+    cursor: pointer;
+  }
+  
+  .dropdown-label::before {
+    content: '▼';
+    float: right;
+  }
+  
+  .openDropdown .dropdown-list {
+    height: auto;
+    display: block;
+  }
+  
+  .openDropdown .dropdown-label:before {
+    content: '▲';
+  }
