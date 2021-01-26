@@ -2,7 +2,7 @@
 
 ## FEUP - Linguagens e Tecnologias Web
 
-[***Course Page***](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459483)
+[***Course Page***](https://sigarra.up.pt/feup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=459485)
 
 
 Este repositório contém:
